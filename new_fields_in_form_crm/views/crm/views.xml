@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_crm_lead_form_new_fields_in_form_crm" model="ir.ui.view">
+            <field name="name">view.crm.lead.form.new.fields.in.form.crm</field>
+            <field name="model">crm.lead</field>
+            <field name="priority" eval="100" />
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[1]" position="after">
+                    <group>
+                        <!-- Grupo 1: Información Básica -->
+                        <group string="Información Básica">
+                            <field name="monto_usd_pws"/>
+                            <field name="monto_usd_se"/>
+                            <field name="bu_id"/>
+                            <field name="portafolio_id"/>
+                        </group>
+                        
+                        <!-- Grupo 2: Información adicional (WIN) -->
+                        <group string="Información adicional (WIN)">
+                            <field name="project_management_id"/>
+                            <field name="gm_usd_esperado"/>
+                            <field name="gm_usd_real"/>
+                            <field name="incentivos_usd"/>
+                            <field name="costo_financiero_usd"/>
+                        </group>
+                        
+                        <!-- Grupo 3: Otros Costos (Project Management) -->
+                        <group string="Otros Costos (Project Management)">
+                            <field name="horas_hombre_usd"/>
+                            <field name="viaticos_usd"/>
+                            <field name="transporte_usd"/>
+                            <field name="imprevistos_usd"/>
+                            <field name="epp_usd"/>
+                            <field name="mtto_oficina_usd"/>
+                            <field name="equipos_usd"/>
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

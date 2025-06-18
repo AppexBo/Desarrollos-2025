@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_bu_tree" model="ir.ui.view">
+        <field name="name">bu.tree</field>
+        <field name="model">bu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_bu_form" model="ir.ui.view">
+        <field name="name">bu.form</field>
+        <field name="model">bu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bu_directo" model="ir.actions.act_window">
+        <field name="name">Bu</field>
+        <field name="res_model">bu</field>
+        <field name="view_id" ref="view_bu_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_bu_root" name="Bu"
+              parent="crm.crm_menu_root"
+              action="action_bu_directo"/>
+</odoo>

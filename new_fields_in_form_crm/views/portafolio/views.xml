@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_portafolio_tree" model="ir.ui.view">
+        <field name="name">portafolio.tree</field>
+        <field name="model">portafolio</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_portafolio_form" model="ir.ui.view">
+        <field name="name">portafolio.form</field>
+        <field name="model">portafolio</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_portafolio_directo" model="ir.actions.act_window">
+        <field name="name">Portafolio</field>
+        <field name="res_model">portafolio</field>
+        <field name="view_id" ref="view_portafolio_tree"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_portafolio_root" name="Portafolio"
+              parent="crm.crm_menu_root"
+              action="action_portafolio_directo"/>
+</odoo>
